@@ -10,51 +10,31 @@
         android:id="@+id/main_textview_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter the Portal"
+        android:text="Mystic Merchants Domain"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="128dp"/>
 
-    <EditText
-        android:id="@+id/main_edittext_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Username"
-        app:layout_constraintTop_toBottomOf="@id/main_textview_title"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:layout_marginHorizontal="50dp" />
-
-    <EditText
-        android:id="@+id/main_edittext_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        app:layout_constraintTop_toBottomOf="@id/main_edittext_username"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:layout_marginHorizontal="50dp" />
-
     <Button
         android:id="@+id/main_button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
-        app:layout_constraintTop_toBottomOf="@id/main_edittext_password"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/main_textview_title"
         android:layout_marginTop="32dp"
         android:layout_marginHorizontal="100dp"/>
 
     <Button
-        android:id="@+id/main_button_signup"
+        android:id="@+id/main_button_createaccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
+        android:text="Create Account"
+        android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/main_button_login"
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="100dp"/>
-
-    //Main activity layout
 
 </androidx.constraintlayout.widget.ConstraintLayout>
