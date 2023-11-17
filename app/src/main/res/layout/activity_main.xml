@@ -55,5 +55,6 @@
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="100dp"/>
 
+    //Main activity layout
 
 </androidx.constraintlayout.widget.ConstraintLayout>
