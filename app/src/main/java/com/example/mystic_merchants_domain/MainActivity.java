@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("shared_pref", MODE_PRIVATE);
         if (sharedPreferences.getBoolean("first_run", true)) {
             insertPredefinedUsers();
+        } else {
             sharedPreferences.edit().putBoolean("first_run", false).apply();
         }
 
