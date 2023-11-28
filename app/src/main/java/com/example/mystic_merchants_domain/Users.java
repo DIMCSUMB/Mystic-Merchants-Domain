@@ -22,4 +22,8 @@ public class Users {
         this.password = password;
         this.isAdmin = isAdmin;
     }
+
+    public String getPassword() {
+        return this.password;
+    }
 }

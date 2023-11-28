@@ -40,12 +40,13 @@ public class LoginActivity extends AppCompatActivity {
 
                 //Authenticate the user
                 //Assisted by Android Room Walkthrough & ChatGPT
-                Users user = database.usersDAO().getUser(username, password);
-                if (user != null) {
+                Users user = database.usersDAO().getUser(username);
+                if (user != null && user.getPassword().equals(password)) {
                     //Save login state and the current user's admin status
                     SharedPreferences.Editor editor = getSharedPreferences("shared_prefs", MODE_PRIVATE).edit();
                     editor.putBoolean("is_logged_in", true);
                     editor.putBoolean("is_admin", user.isAdmin);
+                    editor.putString("username", username);
                     editor.apply();
 
                     //Redirect to the LandingPage
@@ -53,6 +54,8 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else {
+                    //Incorrect credentials
+                    editTextPassword.setError("Invalid password");
                     Toast.makeText(LoginActivity.this, "Invalid credentials.", Toast.LENGTH_SHORT).show();
                 }
             }

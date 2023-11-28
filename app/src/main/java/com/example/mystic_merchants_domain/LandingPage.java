@@ -26,11 +26,12 @@ public class LandingPage extends AppCompatActivity {
 
         //Syntax assisted by ChatGPT
         SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", MODE_PRIVATE);
-        String username = sharedPreferences.getString("username", "Users");
+        String username = sharedPreferences.getString("username", "User");
         boolean isAdmin = sharedPreferences.getBoolean("is_admin", false);
 
         //Welcome message with current username
-        textViewWelcome.setText("Welcome " + username + "1");
+        TextView textViewWelcome = findViewById(R.id.landing_textview_Welcome);
+        textViewWelcome.setText("Welcome " + username + "!");
 
         //Make admin settings button visible if current user is an admin
         if (isAdmin) {

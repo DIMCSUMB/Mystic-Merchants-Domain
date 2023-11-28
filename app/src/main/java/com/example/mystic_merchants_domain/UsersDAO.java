@@ -11,6 +11,6 @@ public interface UsersDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Users users);
 
-    @Query("SELECT * FROM users_table WHERE username = :username AND password = :password")
-    Users getUser(String username, String password);
+    @Query("SELECT * FROM users_table WHERE username = :username")
+    Users getUser(String username);
 }
