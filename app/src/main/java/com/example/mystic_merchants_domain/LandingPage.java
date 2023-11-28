@@ -13,7 +13,6 @@ public class LandingPage extends AppCompatActivity {
 
     private TextView textViewWelcome;
     private Button buttonLogout;
-
     private Button buttonAdminSettings;
 
     @Override
