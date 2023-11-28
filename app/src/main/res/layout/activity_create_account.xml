@@ -48,7 +48,7 @@
         android:layout_marginHorizontal="100dp"/>
 
     <Button
-        android:id="@+id/login_button_CreateAccount"
+        android:id="@+id/create_button_CreateAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create Account"
