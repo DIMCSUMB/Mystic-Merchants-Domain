@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LandingPageActivity">
+    tools:context=".AdminSettingsActivity">
 
     <TextView
-        android:id="@+id/landing_textview_Welcome"
+        android:id="@+id/admin_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome _____!"
+        android:text="Admin Settings"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,52 +18,32 @@
         android:layout_marginTop="128dp"/>
 
     <Button
-        android:id="@+id/landing_button_Items"
+        android:id="@+id/admin_button_addItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Items"
+        android:text="Add Items"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/landing_textview_Welcome"
+        app:layout_constraintTop_toBottomOf="@id/admin_textView"
         android:layout_marginTop="32dp"
         android:layout_marginHorizontal="100dp"/>
 
     <Button
-        android:id="@+id/landing_button_currentPouches"
+        android:id="@+id/admin_button_modifyItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Current Pouches"
+        android:text="Modify Items"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/landing_button_Items"
+        app:layout_constraintTop_toBottomOf="@id/admin_button_addItems"
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="100dp"/>
 
     <Button
-        android:id="@+id/landing_button_oldPouches"
+        android:id="@+id/admin_button_deleteUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Old Pouches"
+        android:text="Delete a User"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/landing_button_currentPouches"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="100dp"/>
-
-    <Button
-        android:id="@+id/landing_button_Logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/landing_button_oldPouches"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="100dp"/>
-
-    <Button
-        android:id="@+id/landing_button_Admin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Admin Settings"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/landing_button_Logout"
+        app:layout_constraintTop_toBottomOf="@id/admin_button_modifyItems"
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="100dp"/>
 

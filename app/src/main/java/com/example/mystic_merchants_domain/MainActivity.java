@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (isLoggedIn) {
             //Redirect to LandingPage if the user is already logged in
-            Intent intent = new Intent(MainActivity.this, LandingPage.class);
+            Intent intent = new Intent(MainActivity.this, LandingPageActivity.class);
             startActivity(intent);
             finish();
         }

@@ -67,7 +67,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                 database.usersDAO().insert(newUser);
 
                 //Navigate to LandingPage
-                Intent intent = new Intent(CreateAccountActivity.this, LandingPage.class);
+                Intent intent = new Intent(CreateAccountActivity.this, LandingPageActivity.class);
                 startActivity(intent);
                 finish();
             }

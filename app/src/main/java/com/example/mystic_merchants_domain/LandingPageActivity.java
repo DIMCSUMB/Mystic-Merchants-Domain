@@ -1,7 +1,6 @@
 package com.example.mystic_merchants_domain;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class LandingPage extends AppCompatActivity {
+public class LandingPageActivity extends AppCompatActivity {
 
     private TextView textViewWelcome;
     private Button buttonLogout;
@@ -51,9 +50,17 @@ public class LandingPage extends AppCompatActivity {
                 editor.apply();
 
                 //Redirect back to MainActivity
-                Intent intent = new Intent(LandingPage.this, MainActivity.class);
+                Intent intent = new Intent(LandingPageActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        buttonAdminSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LandingPageActivity.this, AdminSettingsActivity.class);
+                startActivity(intent);
             }
         });
     }
