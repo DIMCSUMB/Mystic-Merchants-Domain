@@ -11,6 +11,9 @@ import android.widget.TextView;
 public class LandingPageActivity extends AppCompatActivity {
 
     private TextView textViewWelcome;
+    private Button buttonItems;
+    private Button buttonCurrentPouches;
+    private Button buttonOldPouches;
     private Button buttonLogout;
     private Button buttonAdminSettings;
 
@@ -20,6 +23,9 @@ public class LandingPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_landing_page);
 
         textViewWelcome = findViewById(R.id.landing_textview_Welcome);
+        buttonItems = findViewById(R.id.landing_button_Items);
+        buttonCurrentPouches = findViewById(R.id.landing_button_currentPouches);
+        buttonOldPouches = findViewById(R.id.landing_button_oldPouches);
         buttonLogout = findViewById(R.id.landing_button_Logout);
         buttonAdminSettings = findViewById(R.id.landing_button_Admin);
 
@@ -38,6 +44,30 @@ public class LandingPageActivity extends AppCompatActivity {
         } else {
             buttonAdminSettings.setVisibility(View.INVISIBLE);
         }
+
+        buttonItems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LandingPageActivity.this, ItemsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonCurrentPouches.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LandingPageActivity.this, CurrentPouchesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonOldPouches.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LandingPageActivity.this, OldPouchesActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //Set onClickListener for Logout button
         buttonLogout.setOnClickListener(new View.OnClickListener() {
