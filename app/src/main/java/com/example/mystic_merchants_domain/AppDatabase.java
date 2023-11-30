@@ -4,8 +4,7 @@ import androidx.room.Database;
 import androidx.room.RoomDatabase;
 
 //Assisted by Android Room Walkthrough
-@Database(entities = {Users.class, Items.class}, version = 2)
+@Database(entities = {Users.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase{
     public abstract UsersDAO usersDAO();
-    public abstract ItemsDAO itemsDAO();
 }
