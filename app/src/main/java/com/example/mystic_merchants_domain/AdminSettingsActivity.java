@@ -38,5 +38,13 @@ public class AdminSettingsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        buttonAdminDeleteUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminSettingsActivity.this, DeleteUserActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

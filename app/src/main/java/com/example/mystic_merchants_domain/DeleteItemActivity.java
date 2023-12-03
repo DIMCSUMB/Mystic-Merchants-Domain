@@ -33,10 +33,10 @@ public class DeleteItemActivity extends AppCompatActivity {
 
         deleteListView = findViewById(R.id.delete_ListView);
         database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "merchants_database").build();
-        new FetchItemsTask().execute();
+        new GetItemsTask().execute();
     }
 
-    private class FetchItemsTask extends AsyncTask<Void, Void, List<Item>> {
+    private class GetItemsTask extends AsyncTask<Void, Void, List<Item>> {
         @Override
         protected List<Item> doInBackground(Void... voids) {
             return database.itemDAO().getAllItems();
@@ -83,7 +83,7 @@ public class DeleteItemActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             Toast.makeText(DeleteItemActivity.this, "Item deleted successfully", Toast.LENGTH_SHORT).show();
-            new FetchItemsTask().execute(); // Refresh the list
+            new GetItemsTask().execute(); // Refresh the list
         }
     }
 }
