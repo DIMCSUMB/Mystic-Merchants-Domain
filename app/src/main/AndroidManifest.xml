@@ -13,6 +13,12 @@
         android:theme="@style/Theme.MysticMerchantsDomain"
         tools:targetApi="31">
         <activity
+            android:name=".DeleteItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddItemActivity"
+            android:exported="false" />
+        <activity
             android:name=".OldPouchesActivity"
             android:exported="false" />
         <activity

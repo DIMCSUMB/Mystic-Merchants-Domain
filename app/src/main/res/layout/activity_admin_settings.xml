@@ -28,10 +28,10 @@
         android:layout_marginHorizontal="100dp"/>
 
     <Button
-        android:id="@+id/admin_button_modifyItems"
+        android:id="@+id/admin_button_deleteItems"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Modify Items"
+        android:text="Delete Items"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/admin_button_addItems"
         android:layout_marginTop="16dp"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:text="Delete a User"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/admin_button_modifyItems"
+        app:layout_constraintTop_toBottomOf="@id/admin_button_deleteItems"
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="100dp"/>
 

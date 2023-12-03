@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
 
 public class ItemsActivity extends AppCompatActivity {
 
-    private ListView listView;
+    private ListView itemListView;
     private ItemAdapter itemAdapter;
     private AppDatabase database;
 
@@ -23,7 +23,7 @@ public class ItemsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_items);
 
-        listView = findViewById(R.id.item_ListView);
+        itemListView = findViewById(R.id.item_ListView);
 
         //Initialize the Room database
         database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,
@@ -42,7 +42,7 @@ public class ItemsActivity extends AppCompatActivity {
 
             runOnUiThread(() -> {
                 itemAdapter = new ItemAdapter(ItemsActivity.this, items);
-                listView.setAdapter(itemAdapter);
+                itemListView.setAdapter(itemAdapter);
             });
         });
     }

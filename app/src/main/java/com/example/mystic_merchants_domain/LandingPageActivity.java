@@ -22,6 +22,7 @@ public class LandingPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_page);
 
+        //Initialization
         textViewWelcome = findViewById(R.id.landing_textview_Welcome);
         buttonItems = findViewById(R.id.landing_button_Items);
         buttonCurrentPouches = findViewById(R.id.landing_button_currentPouches);
