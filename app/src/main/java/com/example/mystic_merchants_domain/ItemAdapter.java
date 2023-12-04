@@ -1,6 +1,7 @@
 package com.example.mystic_merchants_domain;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -75,6 +76,17 @@ public class ItemAdapter extends BaseAdapter {
                 + "Price: " + item.getPrice();
         textView.setText(itemNameSpannable);
         textView.append("\n" + itemDetails);
+
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start AddToPouchActivity with the selected item's details
+                Intent intent = new Intent(context, AddToPouchActivity.class);
+                intent.putExtra("SELECTED_ITEM_ID", item.getId());
+                // Add other item details as needed
+                context.startActivity(intent);
+            }
+        });
 
         //Return the completed view
         return convertView;

@@ -18,4 +18,10 @@ public interface ItemDAO {
 
     @Query("SELECT * FROM item")
     List<Item> getAllItems();
+
+    @Query("UPDATE item SET quantity = :quantity WHERE id = :itemId")
+    void updateItemQuantity(int itemId, int quantity);
+
+    @Query("SELECT * FROM item WHERE id = :id")
+    Item getItemById(int id);
 }
