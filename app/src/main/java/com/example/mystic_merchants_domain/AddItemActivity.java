@@ -32,37 +32,45 @@ public class AddItemActivity extends AppCompatActivity {
         editTextPrice = findViewById(R.id.add_edittext_Price);
         addItemButton = findViewById(R.id.add_button_AddItem);
 
-        database = Room.databaseBuilder(getApplicationContext(),AppDatabase.class,
+        database = Room.databaseBuilder(getApplicationContext(), AppDatabase.class,
                 "merchants_database").build();
 
         addItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Collect data from the users input
-                String name = editTextName.getText().toString();
-                String description = editTextDescription.getText().toString();
-                String attributes = editTextAttributes.getText().toString();
-                int quantity = Integer.parseInt(editTextQuantity.getText().toString());
-                int price = Integer.parseInt(editTextPrice.getText().toString());
+                final String name = editTextName.getText().toString();
+                final String description = editTextDescription.getText().toString();
+                final String attributes = editTextAttributes.getText().toString();
+                final int quantity = Integer.parseInt(editTextQuantity.getText().toString());
+                final int price = Integer.parseInt(editTextPrice.getText().toString());
 
-                //Create item object and set different properties
-                Item item = new Item();
-                item.setName(name);
-                item.setDescription(description);
-                item.setAttributes(attributes);
-                item.setQuantity(quantity);
-                item.setPrice(price);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //Create item object and set different properties
+                        Item item = new Item();
+                        item.setName(name);
+                        item.setDescription(description);
+                        item.setAttributes(attributes);
+                        item.setQuantity(quantity);
+                        item.setPrice(price);
 
-                //Get ItemDAO from database
-                ItemDAO itemDAO = database.itemDAO();
+                        //Get ItemDAO from database
+                        ItemDAO itemDAO = database.itemDAO();
 
-                //Insert new item into database
-                itemDAO.insert(item);
+                        //Insert new item into database
+                        itemDAO.insert(item);
 
-                //Let user know item was added successfully
-                Toast.makeText(AddItemActivity.this, "Item Added Successfully", Toast.LENGTH_SHORT).show();
-
-                finish();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                //Let user know item was added successfully
+                                Toast.makeText(AddItemActivity.this, "Item Added Successfully", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                }).start();
             }
         });
     }

@@ -16,6 +16,9 @@ public interface PouchDAO {
     @Query("SELECT * FROM Pouch WHERE itemId = :itemId")
     Pouch getPouchByItemID(int itemId);
 
+    @Query("UPDATE pouch SET quantity = :newQuantity WHERE itemId = :itemId")
+    void updateItemQuantity(int itemId, int newQuantity);
+
     @Update
     void updatePouch (Pouch pouch);
 

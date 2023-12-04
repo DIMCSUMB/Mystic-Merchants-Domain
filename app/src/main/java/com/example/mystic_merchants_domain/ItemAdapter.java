@@ -56,13 +56,23 @@ public class ItemAdapter extends BaseAdapter {
         TextView textView = convertView.findViewById(R.id.item_TextView);
 
         String imageName = item.getImage();
-        if (imageName.endsWith(".png")) {
+        if (imageName != null && imageName.endsWith(".png")) {
             imageName = imageName.substring(0, imageName.length() - 4);
         }
         //Set item image
-        int imageResId = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
+        int imageResId = 0;
+        if (imageName != null) {
+            imageResId = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
+        }
         Log.d("ItemAdapter", "Resource ID for image: " + imageResId);
         imageView.setImageResource(imageResId);
+
+        if (imageResId != 0) {
+            imageView.setImageResource(imageResId);
+            imageView.setVisibility(View.VISIBLE);
+        } else {
+            imageView.setVisibility(View.GONE);
+        }
 
         //Asked ChatGPT how I could bold only the name of the items and keep everything else the same
         SpannableString itemNameSpannable = new SpannableString(item.getName());
@@ -70,10 +80,10 @@ public class ItemAdapter extends BaseAdapter {
 
         //Set item details
         String itemDetails =
-                  item.getDescription() + "\n"
-                + item.getAttributes() + "\n"
-                + "Quantity: " + item.getQuantity() + "\n"
-                + "Price: " + item.getPrice();
+                item.getDescription() + "\n"
+                        + item.getAttributes() + "\n"
+                        + "Quantity: " + item.getQuantity() + "\n"
+                        + "Price: " + item.getPrice();
         textView.setText(itemNameSpannable);
         textView.append("\n" + itemDetails);
 
