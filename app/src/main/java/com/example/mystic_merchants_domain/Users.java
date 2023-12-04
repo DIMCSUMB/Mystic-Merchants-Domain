@@ -14,6 +14,7 @@ public class Users {
     @NonNull
     public String username;
     public String password;
+
     public boolean isAdmin;
 
     //Generated Constructor
@@ -23,6 +24,9 @@ public class Users {
         this.isAdmin = isAdmin;
     }
 
+    public String getUsername() {
+        return username;
+    }
     public String getPassword() {
         return this.password;
     }

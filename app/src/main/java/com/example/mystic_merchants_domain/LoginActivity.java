@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.apply();
 
                     //Redirect to the LandingPage
-                    Intent intent = new Intent(LoginActivity.this, LandingPage.class);
+                    Intent intent = new Intent(LoginActivity.this, LandingPageActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
